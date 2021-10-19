@@ -22,6 +22,7 @@ int get_size();                       // This function returns the size of shape
 char get_char();                      // This function will ask users to select a character will be used to draw a shape
 void draw_triangle(int size, char c); // This function draws a triangle of size "size" using character c
 void draw_diamond(int size, char c);  // This function draws a diamond of size "size" using character c
+void draw_bottom(int size, char c);   // This function draws a diamond of size "size" using character c
 
 int main()
 {
@@ -33,6 +34,7 @@ int main()
         cout << "You requested to quit, bye \n";
         return 0;
     }
+
     draw_shape(user_selection);
     return 0;
 }
@@ -67,10 +69,13 @@ void draw_shape(int choice)
     size = get_size();
     character = get_char();
 
+    cout << "***************************";
     if (choice == 1)
         draw_triangle(size, character);
     else
         draw_diamond(size, character);
+
+    cout << "***************************";
 }
 
 int get_size()
@@ -106,8 +111,6 @@ A triangle of size using * character:
 void draw_triangle(int size, char c)
 {
     using namespace std;
-    cout << endl;
-    cout << endl;
     for (int i = 1; i < size; i++)
     {
         // Blanks
@@ -127,16 +130,31 @@ void draw_triangle(int size, char c)
 }
 void draw_diamond(int size, char c)
 {
-    for (int i = 0; i < size; i++)
+    draw_triangle(size, c);
+    draw_bottom(size - 1, c);
+}
+
+/*
+A diamon of size using * character:
+   *        1    (n*2-1) -> number of stars per line
+  ***       3    (n-1) -> number of blanks in reverse order
+ *****      5
+*******     7
+ *****      5
+  ***       3
+   *        1
+*/
+
+void draw_bottom(int size, char c)
+{
+    using namespace std;
+    for (int i = 1; i < size; i++)
     {
-        // Blanks
-        for (int j = (size - i); j > 0; j++)
+        for (int j = 0; j < i + 1; j++)
         {
             cout << " ";
         }
-
-        // Characters
-        for (int j = (i * 2 - 1); j > 0; j++)
+        for (int j = 0; j < ((size - i) * 2 - 1); j++)
         {
             cout << c;
         }
