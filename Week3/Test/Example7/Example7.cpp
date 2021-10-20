@@ -111,16 +111,14 @@ void draw_triangle(int size, char c)
 {
     cout << endl;
     // For each row
-    for (int i = 1; i <= size; i++)
+    for (int row = 1; row <= size; row++)
     {
-        // Print Blanks
-        for (int j = 0; j < (size - i); j++)
+        for (int j = 1; j <= (size - row); j++)
         {
             cout << " ";
         }
-
-        // Print Characters
-        for (int k = 0; k < (i * 2 - 1); k++)
+        // Draw character
+        for (int i = 1; i <= row * 2 - 1; i++)
         {
             cout << c;
         }
