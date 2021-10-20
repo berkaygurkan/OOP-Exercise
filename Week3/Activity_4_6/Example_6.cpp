@@ -1,34 +1,37 @@
-// Function calling another function
-// FuncA will be called inside of FuncB
+// Function calling another function - Example
+// Consider a^2*x + b*x+c = 0 equation.
+// Lets create a function that gets coefficients of equation with another function and
+// calculate delta value (b*b-4*a*c)
 
 #include <iostream>
 using namespace std;
 
-double Func_B();
-void Func_A(double &x);
+void get_coefficients(double &a, double &b, double &c);
+double bb_4ac();
 
 int main()
 {
-    double y;
+    cout << "Process is starting " << endl;
+    cout << endl;
 
-    y = Func_B();
+    double result = bb_4ac();
 
-    cout << "Y value is : " << y << endl;
+    cout << "Result is " << result;
 
     return 0;
 }
 
-double Func_B()
+void get_coefficients(double &a, double &b, double &c)
 {
-    double x = 1.1;
-
-    Func_A(x);
-
-    return x;
+    cout << "Please enter coeffiecient of quadratic equation from left handside to right hand side" << endl;
+    cout << endl;
+    cin >> a >> b >> c;
 }
 
-void Func_A(double &x)
+double bb_4ac()
 {
-    cout << "Hi its Func A" << endl;
-    return;
+    double a, b, c;
+    get_coefficients(a, b, c);
+
+    return b * b - 4 * a * c;
 }
