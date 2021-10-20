@@ -1,5 +1,5 @@
 /*
-In this part, we want to create a program that draws a diamond or a triangle with a size that the user selects using 
+Lets create a program that draws a diamond or a triangle with a size that the user selects using 
 a specific character that will be entered at the keyboard.  
 
 Here are two examples:
@@ -9,6 +9,16 @@ A triangle of size using * character:
   ***       3    (n-1) -> number of blanks in reverse order
  *****      5
 *******     7
+
+A diamond of size 4, using *:
+   *            
+  ***          
+ *****      
+*******
+ *****
+  ***
+   *
+   * 
 */
 
 #include <iostream>
@@ -27,7 +37,9 @@ void draw_bottom(int size, char c);   // This function draws a diamond of size "
 int main()
 {
     int user_selection;
+
     instructions();
+
     user_selection = menu();
     if (user_selection != 1 && user_selection != 2)
     {
@@ -36,6 +48,7 @@ int main()
     }
 
     draw_shape(user_selection);
+
     return 0;
 }
 
@@ -55,8 +68,9 @@ int menu()
 
     cout << "*******************" << endl;
     cout << "Please select your choice" << endl;
-    cout << "1: for triangle,  2: for diamond, 3: for quit" << endl;
+    cout << "1: for triangle,  2: for diamond, 3: for quit  :";
     cin >> selection;
+    cout << "You have selected option:  " << selection;
 
     return selection;
 }
@@ -69,13 +83,13 @@ void draw_shape(int choice)
     size = get_size();
     character = get_char();
 
-    cout << "***************************";
+    cout << "***************************" << endl;
     if (choice == 1)
         draw_triangle(size, character);
     else
         draw_diamond(size, character);
 
-    cout << "***************************";
+    cout << "***************************" << endl;
 }
 
 int get_size()
@@ -94,7 +108,7 @@ char get_char()
     char character;
 
     cout << endl;
-    cout << "Please give your character " << endl;
+    cout << "Please give your character :  ";
     cin >> character;
 
     return character;

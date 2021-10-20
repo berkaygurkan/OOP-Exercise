@@ -1,0 +1,22 @@
+/*
+Lets create a program that draws a diamond or a triangle with a size that the user selects using 
+a specific character that will be entered at the keyboard.  
+
+Here are two examples:
+
+A triangle of size using * character:
+   *        1    (n*2-1) -> number of stars per line
+  ***       3    (n-1) -> number of blanks in reverse order
+ *****      5
+*******     7
+
+A diamond of size 4, using *:
+   *            
+  ***          
+ *****      
+*******
+ *****
+  ***
+   *
+   * 
+*/

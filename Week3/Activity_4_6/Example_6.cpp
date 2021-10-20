@@ -1,12 +1,21 @@
 // Function calling another function
+// FuncA will be called inside of FuncB
 
 #include <iostream>
-
 using namespace std;
 
-void Func_A(double &x)
+double Func_B();
+void Func_A(double &x);
+
+int main()
 {
-    return;
+    double y;
+
+    y = Func_B();
+
+    cout << "Y value is : " << y << endl;
+
+    return 0;
 }
 
 double Func_B()
@@ -18,13 +27,8 @@ double Func_B()
     return x;
 }
 
-int main()
+void Func_A(double &x)
 {
-    double y;
-
-    y = Func_B();
-
-    cout << "Y value is : " << y << endl;
-
-    return 0;
+    cout << "Hi its Func A" << endl;
+    return;
 }

@@ -1,9 +1,9 @@
 // Where we need "return" statement in void function
 #include <iostream>
-
-void Division();
-
 using namespace std;
+
+void Division(); // Precondition : This function asks two integer numbers
+                 // Post Condition : The values result is first number divided by second number
 
 int main()
 {
@@ -24,7 +24,7 @@ void Division()
     if (b == 0)
     {
         cout << "Dividing a number to zero is not possible";
-        return;
+        return; // Function will return back to main before executing division by zero.
     }
     cout << "Your division result is : " << (a / b) << endl;
 }
