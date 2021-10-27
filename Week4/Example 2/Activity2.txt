@@ -1,0 +1,2 @@
+Modify the above program such that the program writes the output file output.txt.  You need to modify the function get_stream such that it returns two streams to the main, one for the input and the other for the output.  Call your new program ex53.cpp.
+ 

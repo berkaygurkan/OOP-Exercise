@@ -1,6 +1,9 @@
-/*  Example 2 
+/*  Example 3 
 
-    Example 1 with using stremas as arguments to functions
+    Different input read techniques to read text file.
+    // get member function : allows progra mto read in one character of input and store in a variable type of char
+    // put member function : this is analogous to get except that it is used for output rather than input.
+    // eof (end of file) member function : determines if there is no more input left. Boolean return value -> 1: end of file 0:not end of file.
 
 */
 
@@ -23,21 +26,30 @@ int main()
     cout << endl;
     cout << "Here are the entire contents of the input file \n";
 
-    /*
+    //v1
     while (in_s >> c) // Step (4)-Read all numbers one-by-one to the end of the file.
     {
         cout << c;
     }
- */
+
+    /* //v2
     while (in_s.get(c)) // Step (4)-Read all numbers one-by-one to the end of the file.
     {
+        //cout << c;
         cout.put(c);
     }
-
+*/
+    /*  //v3
+    while (!in_s.eof())
+    {
+        in_s.get(c);
+        cout << c;
+    }
+*/
     cout << endl;
     cout << "\n I am done with writing the contents of the file \n";
 
-    in_s.close(); // Step (5)-Close the connection (close the file)
+    in_s.close();
 
     return 0;
 }

@@ -1,0 +1,1 @@
+Modify the above program such that the program writes the output to a file called output.txt, instead of displaying it.

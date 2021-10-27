@@ -1,0 +1,7 @@
+Hello! This message is printed on file
+I am reading numbers from file 1
+I am reading numbers from file 2
+I am reading numbers from file 3
+I am reading numbers from file 4
+I am reading numbers from file 5
+Hello! This is the end of program

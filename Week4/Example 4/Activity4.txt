@@ -1,0 +1,4 @@
+// This program reads one character from the keyboard and will
+// convert it to uppercase, if it is lowercase
+// convert it to lowercase, if it is uppercase
+// display a message, if it is a digit
