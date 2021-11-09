@@ -1,0 +1,6 @@
+I typed the following 2 lines late last night and made several mistakes.  As you will immediately notice, I have written G++ for g++ and Gcc for gcc.  I want you to help me fix these errors by writing a C++ program to replace the incorrect statements with the correct ones.  For now, assume that we will type these two lines from the keyboard.  So you will read the two sentences from the keyboard, and will display the corrected sentences at the end.
+
+Use the above program and functions given in Display 11.7 to write a program that make the necessary corrections when these two sentences are type at the keyboard.  I hope to have your program handy so the next time I make such a mistake, I can easily fix it.
+
+The C and C++ compilers are integrated; G++ is a script to call Gcc with options to recognize C++.
+Gcc processes input files through one or more stages
