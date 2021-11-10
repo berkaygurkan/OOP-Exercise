@@ -1,11 +1,3 @@
-
-#include <iostream>
-#include <cstring> // Stroes C Type String Functions
-#include <cstdlib> // For char array conversions
-using namespace std;
-
-#include <string>
-
 // C String : Arrray with base type of char that stores strings of characters
 // Class String : New way of string implementing strings (Cpp)
 // Vectors: Array that can grow or shrink. Their size can be changed during promgram running.
@@ -14,46 +6,69 @@ using namespace std;
 // sting s1
 // string s2('Hello')
 
-string s1("Hello");
-string s2;
+#include <iostream>
+
+// In order to use string class we have to add string lib (1)
+// and using namespace std
+#include <string>
+#include <cstring>
+#include <cstdlib>
+using namespace std;
+
+// How to declare / initiazlize (2)
+// string s1;
+// string s2("Hello")
 
 int main()
 {
-    string s1("Hello");
-    string s2;
-    s2 = "World";
+    //(2)
+    string s1;
+    string s3;
+    string s2("Hello2");
 
-    // Easy way to implement
-    string s3 = s1 + s2;
+    // We can use = operators easily (3)
+    s1 = "Hello1";
+
+    cout << s1 << endl;
+    cout << s2 << endl;
+
+    // Can be compared with == (4)
+    if (s1 == s2)
+    {
+        cout << "Strings are the same" << endl;
+    }
+    else
+        cout << "Strings are NOT the same" << endl;
+
+    // Can be easily concatenad with + (5)
+    //s3 = s1 + s2;
+    //cout << s3 << endl;
+
+    // + operator overload C-Strings too
+    char myEmptyCString[] = " ";
+    s3 = s1 + myEmptyCString + s2;
     cout << s3 << endl;
 
-    // + can convert C type into Class Type
-    string s4 = s1 + " " + s2;
-    cout << s4 << endl;
+    // IO (6)
+    string s4;
+    string s5;
 
-    // Input Output
-    string myStr1;
-    string myStr2;
+    // >> this operator omits blanks space
+    cout << "Please enter a string";
+    //cin >> s4 >> s5;
 
-    cout << "Please enter a string ";
+    // We can use getline (not member function) to get line
+    getline(cin, s4);
+    getline(cin, s5);
 
-    // this (>>) operator omits blank namespace
-    //cin >> myStr1>>myStr2;
+    // We can use special character (7)
+    //getline(cin, s4, '*');
+    //getline(cin, s5, '*');
 
-    // To get line
-    getline(cin, myStr1);
-    getline(cin, myStr2);
+    cout << s4 << s5;
 
-    // To get line with special character
-    //getline(cin,myStr1,'*');
-    //getline(cin,myStr2),'*';
-
-    cout << " Str1 : " << myStr1;
-    cout << " Str2 : " << myStr2;
-
-    // String Processing with Class Type
+    // String processing with class type string (8)
     // Show table
-
     string longStr = "Hey its Berkay";
     string shortStr = "its";
 
@@ -67,33 +82,24 @@ int main()
     cout << endl;
     cout << longStr;
 
-    // Compare strings (== works)
+    // C-String to Class conversions (10)
+    char aCString[] = "This is my C-String";
+    string stringVar;
 
-    string myS1 = "berkay";
-    string myS2("berkay1");
+    stringVar = aCString; // Char to Class Type String
+    //aCString = stringVar;                // ILLEGAL
+    //strcpy(aCString, stringVar);         // ILLEGAL
+    strcpy(aCString, stringVar.c_str()); // legal
 
-    if (myS1 == myS2)
-        cout << "They are the same";
-    else
-        cout << "They are NOT the same";
+    cout << stringVar;
 
-    // Convert between C type and Class type
+    // Class type string to other base types(int float double)
+    // #include <cstdlib>
 
-    char aCString[] = "This is my C type string";
-    string stringVariable;
-    stringVariable = "Who Worik";
-
-    //aCString = stringVariable // ILLEGAL
-    //strcpy(aCString,stringVariable) // ILLEGAL
-    strcpy(aCString, stringVariable.c_str()); // LEGAL
-
-    cout << aCString;
-    return 0;
-
-    // Convert Class Type to Float Integer
     int i;
     double d;
     string s;
+
     i = stoi("35");
     d = stod("35.4");
     s = to_string(d * 2);
@@ -101,4 +107,6 @@ int main()
     cout << i << endl;
     cout << d << endl;
     cout << s << endl;
+
+    return 0;
 }

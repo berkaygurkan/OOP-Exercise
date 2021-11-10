@@ -1,102 +1,106 @@
+// Strings and Vectors
+
+// Objectives of today
+/*
+1) Learn to declare, initialize, and use strings
+2) Learn about C-string values and variables
+3) Learn about the standard string class
+4) Learn about vectors
+*/
+
+// C-Strings    : Array with base type of char that stores string of characters
+// Class String : New way of string implementation on cpp
+// Vectors      : Array that can grow or shrink. Their size can be changed during runtime.
+
+/* C- Strings*/
+// Array with a character
+// Ends with a null ('\0') in order to indicate the end of real part characters (not empty)
+
+// How to Declare (1)
+// char ArrayName[MaxStringCharNum +1];
+
+// How to Initialize (1)
+// char ArrayName[MaxStringCharNum+1]="Hello";
+
+// What is null character (2)
+// char myString[6]="Hello";
+// myString[0] = 'H';
+// myString[1] = 'e';
+// myString[2] = 'l';
+// myString[3] = 'l';
+// myString[4] = 'o';
+// myString[5] = '\0';
 
 #include <iostream>
-#include <cstring>  // Stroes C Type String Functions
-#include <cstdlib>  // For char array conversions
+#include <cstdlib>
+#include <cstring>
+
 using namespace std;
-
-
-// C String : Arrray with base type of char that stores strings of characters
-// Class String : New way of string implementing strings (Cpp)
-// Vectors: Array that can grow or shrink. Their size can be changed during promgram running.
-
-
-/* C Type Strings */
-// Ends with null "\0" character in order to indicate the end of "real" characters.
-// How to Initialize
-// char ArrayName[MaxStringCharNum + 1]
-
-
-// We can initialize when it is declared
-char myString[6] = "Hello";
-
-
-// myString[0]= 'H'
-// myString[1]= 'e'
-// myString[2]= 'l'
-// myString[3]= 'l'
-// myString[4]= 'o'
-// myString[5]= '\0'
-
-char myString2[150] = "Hi There";
-
-
-char myEmptyString[5];
-
-
-char s1[15]="Berkay";
-char s2[]="Gurkan";
 
 int main()
 {
-    // We can't use "=" ,"==" or similar operators with char arrau
-    // myEmptyString = "Guess we have problem";
-    
-    // Correct way of initialization after declaration
-    //strcpy(myEmptyString,"Hell");
-    strncpy(myEmptyString,"Hello",5); // Do not forget to leace room for null
-    
-    cout<<myString2<<endl;
-    cout<<myEmptyString<<endl;
-    cout<<myString[4]<<endl;
-    cout<<strlen(myEmptyString)<<endl;
-    cout<<myEmptyString[4]<<endl;
-    
-    
-    // using == for comparison doesnt give syntax error
-    // but result is not correct.
-    
-    //if(s1==s2)
-    if(!strcmp(s1,s2))
+    // We dont need to fill whole size (3)
+    char myString1[15] = "Hello";
+    char myString2[500] = "HeyHey";
+
+    // We cant use = to initialize char array (4)
+    char myString3[6];
+    //myString3 = "Hello";
+
+    // String Copy (5)
+    strcpy(myString3, "Hello");
+    // strncpy(myString3, "Hello", 2); // Leave room for null
+
+    cout << myString1 << endl;
+    cout << myString3 << endl;
+
+    // Array Indices (6)
+    cout << myString3[0] << endl;
+
+    // Compare C-Strings(7)
+    /*if (myString1 == myString3) // Doesnt give you compile error but result is wrong!!
     {
-        cout<<"Strings are the same !"<<endl;
+        cout << "Those strings are the same" << endl;
     }
     else
-        cout <<"Strings are NOT the same "<<endl;
+        cout << "Those strings are NOT the same" << endl;
+*/
+    // strcmp (8)
+    if (!strcmp(myString1, myString3)) // Dont forget to add !
+    {
+        cout << "Those strings are the same" << endl;
+    }
+    else
+        cout << "Those strings are NOT the same" << endl;
 
-    // Concatenate (chaining) strings    
-    //strcat(s1,s2);
-    strncat(s1,s2,4);
-    cout<<s1<<endl;
-    
-    // C-String Input and Output
-    // >> operator omits blank spaces and specia
-    // characters
-    
+    // Chaining (concatenate) strings (9)
+    //strcat(myString1, myString3);
+    strncat(myString1, myString3, 2);
+    cout << "After adding second string to first string, firs string became : " << myString1;
+
+    // Input Output with C-Strings (10)
     char a[80];
     char b[80];
-    cout<<"Please type";;
-    //cin>>a>>b;
-    cin.getline(a,80);
-    cin.getline(b,80);
-    cout<<a<<b<<"END OF PROGRAM";
-    
-    // char array to integer or float
-    // atoi arrat to integer
-    // atod array to double
-    // atof arrat to float
-    
-    char myCharArr[] = "123";
-    char myCharArrF[] ="123.23";
-    
-    int myNumInt = atoi(myCharArr);
-    float myNumFloat = atof(myCharArr);
-    
-    cout<<myNumInt<<endl;
-    cout<<myNumFloat<<endl;
-    
-    
-    
-    
-    
+
+    // Using >> notation breaks strings with special characters
+    cout << "\n Please type two chars : ";
+    //cin >> a >> b;
+
+    // We can get whole line with getline member function
+    cin.getline(a, 80);
+    cin.getline(b, 80);
+
+    cout << a << b;
+
+    // Convert C-string to other base types (int float double...) (11)
+    char myNumCharArray[] = "123";
+    char myNumCharArrayFloat[] = "1234.45";
+
+    int i = atoi(myNumCharArray);
+    float f = atof(myNumCharArrayFloat);
+
+    cout << "Converted integer from array is " << i;
+    cout << "Converted float from array is " << f;
+
     return 0;
 }
