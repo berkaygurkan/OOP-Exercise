@@ -1,4 +1,4 @@
-Modify the P11_1.cpp program to ask users for two strings then:
+    Modify the P11_1.cpp program to ask users for two strings then:
     1) Append the second string to the end of the first string and display the resulting string,
 
     2) Display a message on whether or not the word is a Palindrome.  Such strings are the same when you write them backward.
