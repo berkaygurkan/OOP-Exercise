@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
     //vector<int> v(4);
-    vector<int> v(0);
+    vector<int> v;
     char ans = 'y';
     float sum = 0;
     int count = 0;
@@ -21,7 +21,7 @@ int main()
         /*cin >> v[count];
         sum += v[count];
         cout << v[count];*/
-        //count++;
+        //
 
         // Correct way
 
@@ -34,6 +34,7 @@ int main()
 
         cout << "Do you wish to enter a new number y/n \n";
         cin >> ans;
+        count++;
     }
 
     if (count > 0)
