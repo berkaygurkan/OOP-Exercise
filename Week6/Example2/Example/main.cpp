@@ -1,110 +1,15 @@
-/*
-// P10_1.cpp - A program that uses an array of integers
-#include <iostream>
-using namespace std;
-int main()
-{
-    int numlist[8];
-    int i;
 
-    // Read 8 integers from the keyboard
-    for (i = 0; i < 8; i++)
-    {
-        cout << "Enter value #" << i + 1 << ": ";
-        cin >> numlist[i];
-    }
-    // Display the numbers in a reverse order
-    for (i = 8; i > 0; i--)
-    {
-        cout << "Value #" << i << ": ";
-        cout << numlist[i - 1] << endl; //Pay attention to i-1!
-    }
+/* Example 2*/
 
-    return 0;
-}
-*/
-/*
-// P12_2.cpp - A program that uses an array of integers. Array elements accessed using pointer notation
-#include <iostream>
-using namespace std;
-int main(void)
-{
-    int numlist[8];
+// Lets create a program that stores a selected number of StudentName and StudentID by user. Display the student list after user finish
+// adding names
 
-    // Read 8 integers from the keyboard
-    for (int i = 0; i < 8; i++)
-    {
-        cout << "Enter value #" << i + 1 << ": ";
-        cin >> numlist[i];
-    }
-    // Display the numbers in a reverse order
-    for (int i = 8; i > 0; i--)
-    {
-        cout << "Value #" << i << ": ";
-        cout << *(numlist + (i - 1)) << endl; //Pay attention to i-1!
-    }
+// 1) Ask user number of students
+// 2) Create a dynamical string array
+// 3) Use for loop to fill array elements by using user inputs.
+// 4) Print Result
+// 5) Delete dynamical array.
 
-    return 0;
-}*/
-/*
-// P10_1b.cpp - A program that uses a flexible size array of integers
-#include <iostream>
-using namespace std;
-const int SIZE = 8; // Set the maximum size for the array
-
-int main(void)
-{
-    int numlist[SIZE];
-
-    // Read SIZE integers from the keyboard
-    for (int i = 0; i < SIZE; i++)
-    {
-        cout << "Enter value #" << i + 1 << ": ";
-        cin >> numlist[i];
-    }
-    // Display the numbers in a reverse order
-    for (int i = SIZE; i > 0; i--)
-    {
-        cout << "Value #" << i << ": ";
-        cout << numlist[i - 1] << endl; //Pay attention to i-1!
-    }
-
-    return 0;
-}
-
-*/
-/*
-//Note that SIZE was defined as a const int.Now lets modify this program and re - write it creating the array dynamically.
-
-// P12_2a.cpp. Illustrates dynamic arrays
-#include <iostream>
-using namespace std;
-
-int main(void)
-{
-    int SIZE;
-    cout << "Enter the size of the array" << endl;
-    cin >> SIZE;
-
-    int *numlist = new int[SIZE];
-
-    // Read SIZE integers from the keyboard
-    for (int i = 0; i < SIZE; i++)
-    {
-        cout << "Enter value #" << i + 1 << ": ";
-        cin >> numlist[i];
-    }
-    // Display the numbers in a reverse order
-    for (int i = SIZE; i > 0; i--)
-    {
-        cout << "Value #" << i << ": ";
-        cout << numlist[i - 1] << endl; //Pay attention to i-1!
-    }
-    delete[] numlist;
-    return 0;
-}*/
-
-// P12_2a.cpp. Illustrates dynamic arrays
 #include <iostream>
 using namespace std;
 #include <string>
@@ -114,7 +19,7 @@ int main(void)
     cout << "Please enter number of students : ";
     int num_of_students;
     cin >> num_of_students;
-    cin.ignore();
+    cin.ignore(); // Important to use getline after usage of cin
 
     string *Student_Name = new string[num_of_students];
     string *Student_ID = new string[num_of_students];
