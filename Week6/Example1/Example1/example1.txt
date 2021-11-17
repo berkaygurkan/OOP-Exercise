@@ -1,0 +1,4 @@
+/* Dynamic variables using pointers
+  1) Input from the keyboard the area_value and its units as double and string. 
+  Compute one-half and one-quarter of the area and display the results by using dynamical variable.
+  2) Destroy the dynamic variable at the end*/
