@@ -2,6 +2,7 @@
 // P10_1.cpp - A program that uses an array of integers
 #include <iostream>
 using namespace std;
+// Lets create array, ask user to fill array numbers and print reverse of it
 int SIZE = 8; // Step (3)
 int main()
 {
