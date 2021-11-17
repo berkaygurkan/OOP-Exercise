@@ -1,46 +1,58 @@
-
 #include <iostream>
+
 using namespace std;
 
-typedef int *IntArrayPtr;
-
-void fill_array(int a[], int size);
-void sort(int a[], int size);
+// Step (1) In C++ an array variable is actually pointer variable
+// that points first indexed variable. Thus any array variable
+// can be assigned to pointer variable easily.
 
 int main()
 {
-    using namespace std;
+    int a[10];
+    typedef int *IntPtr;
+    IntPtr p;
 
-    cout << " This program sorts numbers from lowest to highest. \n";
+    // Assign array to pointer.
+    // After we assign p points same memory location as a.
+    // p[0]... square bracket notation can be used as long as we assign array to pointer.
 
-    int array_size;
-    cout << "How many numbers will be sorted" << endl;
-    cin >> array_size;
+    p = a;
+    // a = p is not legal
 
-    IntArrayPtr a;
-    a = new int[array_size];
-
-    fill_array(a, array_size);
-    //sort(a, array_size);
-
-    cout << "In sorted order the numbers are : \n";
-
-    for (int index = 0; index < array_size; index++)
+    // We can use pointer like arrays
+    // Fill numbers inside array
+    for (int i = 0; i < 10; i++)
     {
-        cout << a[index] << " ";
+        a[i] = i;
     }
+
+    for (int i = 0; i < 10; i++)
+    {
+        cout << p[i] << " ";
+    }
+
     cout << endl;
 
-    delete[] a;
-    return 0;
-}
-
-void fill_array(int a[], int size)
-{
-    cout << " Enter " << size << " integers \n";
-
-    for (int index = 0; index < size; index++)
+    for (int i = 0; i < 10; i++)
     {
-        cin >> a[index];
+        p[i] = i + 1;
     }
+
+    for (int i = 0; i < 10; i++)
+    {
+        cout << a[i] << " ";
+    }
+
+    // Step (2) Dynamic arrays
+    // we use same notation (new) for dynamical arrays
+    // this will allow us to declare array without any size
+    typedef double *DoublePtr;
+    DoublePtr p1;
+    int size = 15;
+    p1 = new double[size];
+
+    // Step(3) we can use delete operator to eleminate array
+    delete[] p1;
+
+    return 0;
 }
