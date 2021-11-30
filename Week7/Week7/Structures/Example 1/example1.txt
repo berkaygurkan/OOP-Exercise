@@ -1,0 +1,4 @@
+Modify the P61a.cpp program such that it asks users to enter 2 different loans this time and uses a 
+function called initialize_loan to initialize each loan struct. 
+The program should also compute and display the payment for each individual loan and the total monthly payment.   
+Note that you have to use a separate struct for each loan.  Call your new program ex61.cpp.
