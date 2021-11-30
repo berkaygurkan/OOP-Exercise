@@ -59,6 +59,24 @@ private:
     }
 };
 
+class Executive : public Person
+{
+public:
+    Executive(int p_ID, int p_sal, int p_age, int p_year); // Contructor
+    Executive();                                           // Constructor overloading
+    void setYears(int year)
+    {
+        yearsExecutive = year;
+    }
+    double CalculateContribution()
+    {
+        return yearsExecutive * 10;
+    }
+
+private:
+    int yearsExecutive;
+};
+
 int main()
 {
     // How to declare object Step(3)
@@ -67,6 +85,10 @@ int main()
 */
     Person Berkay{1, 500, 25, 2};
     Person Mert;
+
+    Executive Gurkan{3, 1000, 40, 10};
+    Gurkan.setYears(15);
+    cout << "Contribution for executive is " << Gurkan.CalculateContribution() << endl;
     // Person Mert(); // ILLEGAL
     /*
         // How to access data and function inside object Step(4)
@@ -79,6 +101,8 @@ int main()
 
     Mert.setData(2, 500);
     Mert.PrintPerson();
+
+    Gurkan.PrintPerson();
 
     return 0;
 }
@@ -137,4 +161,12 @@ Person::Person()
     salary = 0;
     age = 0;
     yearsWorked = 0;
+}
+
+Executive::Executive(int p_ID, int p_sal, int p_age, int p_year) : Person(p_ID, p_sal, p_age, p_year)
+{
+}
+
+Executive::Executive() : Person()
+{
 }
