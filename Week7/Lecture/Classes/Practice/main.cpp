@@ -37,18 +37,24 @@ public:
     //       2) no return type (even void is not allowable!!)
 
     Person(int p_ID, int p_sal, int p_age, int p_year); // Contructor
-    Person();                                           // Constructor overloading
+    // Step(8) Contructor without arguments
+    Person(); // Constructor overloading
+
+    // Accessor Function (Step 5)
     void PrintPerson();
+    // Mutator Function (Step 5)
     void setData(int p_ID, int p_sal, int p_age, int p_year); // We have to use member function to reach private variables Step(5)
 
     // Function overloading Step(6)
     void setData(int p_ID, int p_sal); // Same function but use different number of arguments
 
 private:
+    // Encapsulation : is data hiding variables of class private and change values by using checking rules.
     int ID;
     int salary;
     int age;
     int yearsWorked;
+    // Step(5)
     void checkData()
     {
         if (ID < 0 || salary < 0 || age < 0 || yearsWorked < 0)
@@ -59,6 +65,7 @@ private:
     }
 };
 
+// Step (10) Inheritance
 class Executive : public Person
 {
 public:
@@ -109,6 +116,7 @@ int main()
 
 // How to define member function of class Step(2)
 // TypeName ClassName :: MemberFunction definition
+// :: is called scope resolution operator
 void Person::PrintPerson()
 {
     cout << "*********Printing Class Content***********" << endl;
@@ -118,6 +126,7 @@ void Person::PrintPerson()
     cout << "Years Worked of Person : " << yearsWorked << endl;
 }
 
+// Step(5)
 void Person::setData(int p_ID, int p_sal, int p_age, int p_year)
 {
     ID = p_ID;
@@ -128,6 +137,7 @@ void Person::setData(int p_ID, int p_sal, int p_age, int p_year)
     // Lets add some rule for initializing variables of objects
 }
 
+// Step(6)
 void Person::setData(int p_ID, int p_sal)
 {
     ID = p_ID;
@@ -149,12 +159,13 @@ void Person::setData(int p_ID, int p_sal)
 }
 */
 // Constructor Initialization
+// Step(7-9)
 Person::Person(int p_ID, int p_sal, int p_age, int p_year) : ID(p_ID), salary(p_sal), age(p_age), yearsWorked(p_year)
 {
     checkData();
 }
 
-// Constructor
+// Constructor  Step (8)
 Person::Person()
 {
     ID = 0;
@@ -163,6 +174,7 @@ Person::Person()
     yearsWorked = 0;
 }
 
+// Step (10)
 Executive::Executive(int p_ID, int p_sal, int p_age, int p_year) : Person(p_ID, p_sal, p_age, p_year)
 {
 }
