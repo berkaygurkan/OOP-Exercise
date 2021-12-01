@@ -1,0 +1,4 @@
+1) Create same program by using class structure. Make all member variables and functions public.
+2) Set all member variables to private and add Display member function to display loan information.
+3) Include monthly payment as a member variable and correct payment function. 
+4) Create new function to add loan payments by using objects in arguments

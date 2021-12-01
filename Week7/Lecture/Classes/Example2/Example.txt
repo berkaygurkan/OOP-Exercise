@@ -1,0 +1,4 @@
+Create same program by using constructors
+1) Create empty constructor
+2) Create constructor instead of set function
+3) Create 4 different loans set information by using constructor and print information.

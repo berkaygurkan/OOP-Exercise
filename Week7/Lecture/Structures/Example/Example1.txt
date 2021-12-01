@@ -1,0 +1,6 @@
+Create a program that use structure data type to store loan information.
+1) Struct should store ID, amount, annual rate and term information.
+2) Calculate monthly payment for loan which is created by user. Calculation step is already given.
+---------------------------------------------------------------
+3) Modify program that it asks users to enter 2 loan and intialize loan struct variables with "initialize_loan" function.
+4) Program should also calculate and display total monthly payment (loan1+loan2)
