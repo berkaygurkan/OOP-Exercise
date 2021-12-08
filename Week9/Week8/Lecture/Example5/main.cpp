@@ -23,13 +23,12 @@ Rules
 Copy Constrcutor is constructor that has one parameter that is the same type as class
 - This parameter must be call by reference with const parameter modifier.
 - It creates a deep copy when initializing object by using another object
-ConstructoName(const ClassName& theObject)
+ClassName::ConstructoName(const ClassName& theObject)
 */
 
 /*
 Overloading assignment operator (=)
-When we use standart assignment operator without dynamical arrays it may not create problems.
-1) overloaded assignemnt operator must be member func
+When we use standart assignment operator without dynamical arrays it may not create problems
 */
 
 /*= operator*/
@@ -46,73 +45,96 @@ using namespace std;
 
 using namespace std;
 
-class DynamicNum
+class StringVar
 {
 public:
-    DynamicNum();        // Constructor
-    ~DynamicNum();       // Destruct
-    DynamicNum(int num); // Constructor (Overloaded)
-    DynamicNum(const DynamicNum &theObject)
-    {
-        value = new int;
-        *value = *(theObject.value);
-    }
-    void operator=(const DynamicNum &theObject)
-    {
-        value = new int;
-        *value = *(theObject.value);
-    }
+    StringVar(int size);
+    StringVar();
+    StringVar(const char a[]);
+    StringVar(const StringVar &stringObject);
+    ~StringVar();
+    void operator=(const StringVar &rightside);
 
-    void changeValue(int a)
-    {
-        *value = a;
-    }
+    int length() const;
 
-    void Display()
-    {
-        cout << "Value is :" << *value << endl;
-    }
+    void inputLine(istream &ins);
+    friend ostream &operator<<(ostream &outs, const StringVar &theString);
 
 private:
-    int *value;
+    char *value;
+    int maxLength;
 };
 
 int main()
 {
-    DynamicNum num1(5);
-    DynamicNum num2(num1);  // Copy Constructor
-    DynamicNum num3 = num1; // Copy Consturctor
-    DynamicNum num4;        // =Operator
-    num4 = num1;
+    StringVar string1("Selam ben Berkay");
+    StringVar string2("mert");
+    StringVar string3(string1);
 
-    num1.Display();
-    num2.Display();
-    num3.Display();
-    num4.Display();
+    cout << string1 << endl;
+    cout << string2 << endl;
+    cout << string3 << endl;
+    string2 = string1;
 
-    num1.changeValue(6);
-    num1.Display();
-    num2.Display();
-    num3.Display();
-    num4.Display();
+    cout << string1 << endl;
+    cout << string2 << endl;
+    cout << string3 << endl;
 
     return 0;
 }
 
-DynamicNum::DynamicNum()
+StringVar::StringVar(int size) : maxLength(size)
 {
-    value = new int;
-    *value = 0;
+    value = new char[maxLength + 1]; //+1 is for '\0'.
+}
+StringVar::StringVar() : maxLength(100)
+{
+    value = new char[maxLength + 1]; //+1 is for '\0'.
+}
+StringVar::StringVar(const char a[]) : maxLength(strlen(a))
+{
+    value = new char[maxLength + 1]; //+1 is for '\0'.
+    strcpy(value, a);
+}
+StringVar::StringVar(const StringVar &stringObject) : maxLength(stringObject.length())
+{
+    value = new char[maxLength + 1]; //+1 is for '\0'.
+    strcpy(value, stringObject.value);
+}
+StringVar::~StringVar()
+{
+    delete[] value;
+}
+int StringVar::length() const
+{
+    return strlen(value);
 }
 
-DynamicNum::DynamicNum(int num)
+// Uses iostream:
+void StringVar::inputLine(istream &ins)
 {
-    value = new int;
-    *value = num;
+    ins.getline(value, maxLength + 1);
 }
 
-DynamicNum::~DynamicNum()
+// Uses iostream:
+ostream &operator<<(ostream &outs, const StringVar &theString)
 {
-    delete value;
-    cout << "Value is deleted :)" << endl;
+    outs << theString.value;
+    return outs;
+}
+
+void StringVar::operator=(const StringVar &rightside)
+{
+    int newLength = strlen(rightside.value);
+    if (newLength > maxLength)
+    {
+        delete[] value;
+        maxLength = newLength;
+        value = new char[maxLength + 1];
+    }
+    for (int i = 0; i < newLength; i++)
+    {
+        value[i] = rightside.value[i];
+    }
+    value[newLength] = '\0';
 }

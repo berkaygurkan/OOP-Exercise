@@ -1,4 +1,4 @@
-/*Example 2 - Overloading << and >> Operators*/
+/*Example 3 - Overloading << and >> Operators*/
 
 #include <iostream>
 #include <cstdlib>

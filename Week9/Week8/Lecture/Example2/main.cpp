@@ -1,4 +1,4 @@
-/*Example 1 - Operator Overloading*/
+/*Example 2 - Operator Overloading*/
 #include <iostream>
 #include <cstdlib>
 using namespace std;
