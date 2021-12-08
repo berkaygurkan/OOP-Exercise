@@ -1,0 +1,6 @@
+Modify the program
+1) make function add of type Money.  Thus, this function now computes the sum of dollars and cents and returns it as class.
+Note that in the above version of the program, you have passed the object sum as call_by_reference.
+2) add a new friend function, subtract, that computes the subtraction of one money from the other.
+3) Make read_money a member function.  Note that if you make read_money a member function, then you can use it to directly 
+initialize the dollars and cents of an Money type object directly.

@@ -1,0 +1,5 @@
+Overload the % operator such that every time you use it, it takes two objects of type Money as its arguments and returns:
+            a) 5% of the difference between the income and expenditure, if income is larger than the expenditure
+            b) -2% if the the expenditure is larger than the income.
+            c) 0 if the expenditure is the same as income
+Note that, by doing this, you are required to overload the greater than sign (>), the smaller than sign (<), and the == sign.

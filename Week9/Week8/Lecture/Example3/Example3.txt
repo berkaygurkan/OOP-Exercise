@@ -1,0 +1,1 @@
+1) Overload write_money function by using >> operator overloading.
