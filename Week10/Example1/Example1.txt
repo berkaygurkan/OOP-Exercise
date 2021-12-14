@@ -1,0 +1,3 @@
+ Define the function give_raise in both HourlyEmployee and SalariedEmployee such that:
+    1) Hourly_bases employees receive 10% raise on their hourly rate (wage_rate)
+    2) Salaried employees receive 6% raise of their salary

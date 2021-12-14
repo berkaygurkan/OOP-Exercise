@@ -1,0 +1,2 @@
+Write the definitions for the member function add_value,
+ the copy constructor, the overloaded assignment operator, and the destructor for this class.
