@@ -1,3 +1,44 @@
+// Derived class automatically has all member variable and functions.
+// It is possible to add new variables and functions in derived class.
+// Inheritance provides a way to organize code without duplication
+
+// Step(2) How to create a derived class
+/* class DerivedClassName : public BaseClassName
+{
+....
+....
+}
+*/
+
+/* Step(3) We may have a same member function name in both child and parent class
+    - If arguments are the same but definitions are different - Redefining
+    - If arguments are not same - Overloading
+    Both of them are available to use but we need to be sure where to use!
+*/
+
+/* Step(4) Constructors are not inherited to child class and we have to define new constructor for child class.
+- We can (and we should) invoke parent class constructor within initializiation section of cosntructor
+  ClassName :: ConstructorName(args....) : ....     The portion after (:) is called initialization section of constructor
+*/
+
+/* Step(5) Derived classes still cant reach private variables of base class by using their own public member
+functions(child class member functions). Easy way to reach is use member functions of base class. Other option will be
+explained in next section
+*/
+
+/* Step(6) If we change private to protected, child classes can reach variables by using their own member functions.
+
+*/
+
+/*
+Lets calculate total payment for employees by using Class using inheritance mechanism.
+1) Create a base class Employee with name, SSN and net payment information.
+2) Create a Hourly Working Employee by creating new class from base class.
+3) Create a Salaried Employee by creating new class from base class.
+4) Include all necessary mutator and accessor functions and keep member variables private.
+5) Print total payment amount with a employee information
+*/
+
 #include <iostream>
 #include <string>
 using namespace std;

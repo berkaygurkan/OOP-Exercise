@@ -1,3 +1,27 @@
+/* Functions that are not inherited */
+
+/*In general, these three types of functions are NOT inherited:
+1) constructors (including copy constructors)
+2) private members (variables and functions)
+3) destructors
+4) the assignment operator =
+5) overloaded assignment operators and constructors*/
+
+/*
+    If we use specially dynamic arrays, pointers or dynamic variables it is important
+    to redefine all of them in child class.
+*/
+
+/*
+Lets create an dynamic array by using class sturucture
+1) Create constructor
+2) Create destructor
+3) Create copy constructor
+4) Create = assignment opeartor overloading
+
+Create and fill first array, use first array to create new arrays by using copy constructor and assignment
+*/
+
 #include <iostream>
 #include <cstdlib>
 using namespace std;
