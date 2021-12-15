@@ -91,17 +91,30 @@ PartFilledArray::PartFilledArray(const PartFilledArray &object) : max_number(obj
 
 void PartFilledArray::operator=(const PartFilledArray &right_side)
 {
+    int new_length = right_side.max_number;
 
-    a = new double[max_number];
-
-    for (int i = 0; i < max_number; i++)
+    if (new_length > max_number)
     {
-        a[i] = right_side.a[i];
+        max_number = new_length;
+        number_used = 0;
+        delete[] a;
+        a = new double[max_number];
+
+        for (int i = 0; i < max_number; i++)
+        {
+            a[i] = right_side.a[i];
+        }
     }
+    else
+        for (int i = 0; i < new_length; i++)
+        {
+            a[i] = right_side.a[i];
+        }
 }
 
 int main()
 {
+
     PartFilledArray firstArray(5);
     firstArray.add_value(10);
     firstArray.add_value(11);
@@ -112,7 +125,7 @@ int main()
     firstArray.printArray();
     PartFilledArray secondArray(firstArray); // Calls copy constructor
     PartFilledArray thirdArray = firstArray; // Calls copy cosntructor
-    PartFilledArray fourthArray(5);
+    PartFilledArray fourthArray(8);
     fourthArray = firstArray;
     cout << "____Second Array______" << endl;
     firstArray.add_value(14);
@@ -121,5 +134,11 @@ int main()
     thirdArray.printArray();
     cout << "____Fourth Array______" << endl;
     fourthArray.printArray();
+
+    /*
+    PartFilledArray fourthArray(3);
+    fourthArray = firstArray;
+    fourthArray.printArray();
+    */
     return 0;
 }
