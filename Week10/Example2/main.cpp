@@ -27,7 +27,9 @@ explained in next section
 */
 
 /* Step(6) If we change private to protected, child classes can reach variables by using their own member functions.
-
+public :
+privta :
+protected: allows us to be used in child classes
 */
 
 /*
@@ -73,8 +75,6 @@ Employee ::Employee()
     cout << "Enter employee social security number : ";
     cin.ignore(); // We've used cin with getline function. In order to use >> operator we must add this line.
     cin >> SSN;
-
-    // cout << endl;
 }
 // Constructor with name information
 Employee ::Employee(string newString, string newSSN)

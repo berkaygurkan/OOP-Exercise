@@ -1,18 +1,18 @@
 /*Example 1 Inheritance*/
-#include <iostream>
-#include <string>
-using namespace std;
 
-// Step(1) What is inheritance
-// Inheritance is a process of creating new class(derived/child class) from another class(base/parent).
-// Derived class automatically has all member variable and functions.
-// It is possible to add new variables and functions in derived class.
-// Inheritance provides a way to organize code without duplication
+/* Step(1) What is inheritance
+Inheritance is a process of creating new class(derived/child class) from another class(base/parent).
+Derived class automatically has all member variable and functions of base class.
+It is possible to add new variables and functions in derived class.
+Inheritance provides a way to organize code without duplication.
+*/
 
-// Step(2) How to create a derived class
-/* class DerivedClassName : public BaseClassName
+/* Step(2) How to create a derived class
+ class DerivedClassName : public BaseClassName
 {
+public:
 ....
+private:
 ....
 }
 */
@@ -21,6 +21,7 @@ using namespace std;
     - If arguments are the same but definitions are different - Redefining
     - If arguments are not same - Overloading
     Both of them are available to use but we need to be sure where to use!
+    - We can still access base definition by using scope resolution operator (::)
 */
 
 /* Step(4) Constructors are not inherited to child class and we have to define new constructor for child class.
@@ -33,16 +34,18 @@ functions(child class member functions). Easy way to reach is use member functio
 explained in next section
 */
 
-
-
 /*
 Lets calculate total payment for employees by using Class using inheritance mechanism.
 1) Create a base class Employee with name, SSN and net payment information.
-2) Create a Hourly Working Employee by creating new class from base class.
+2) Create a Hourly Working Employee by creating new class from base class. (Payment = hoursworked * wage)
 3) Create a Salaried Employee by creating new class from base class.
 4) Include all necessary mutator and accessor functions and keep member variables private.
-5) Print total payment amount with a employee information
+5) Print total payment amount with a employee information.
 */
+
+#include <iostream>
+#include <string>
+using namespace std;
 
 // Base Class
 class Employee
@@ -56,8 +59,8 @@ public:
     double getNetPay();
     void changeName(string newName);
     void changeSSN(string newSSN);
-    void printCheck();
-    void giveRaise(double amount);
+    void printCheck();             // Reciept
+    void giveRaise(double amount); // Step(2)
 
 private:
     string name;
@@ -70,10 +73,8 @@ Employee ::Employee()
     cout << "Enter employee name :";
     getline(cin, name);
     cout << "Enter employee social security number : ";
-    cin.ignore(); // We've used cin with getline function. In order to use >> operator we must add this line.
+    cin.ignore(); // We've used cin with getline function. In order to use >> operator later we must add this line.
     cin >> SSN;
-
-    // cout << endl;
 }
 // Constructor with name information
 Employee ::Employee(string newString, string newSSN)
@@ -135,7 +136,7 @@ public:
     double getRate();
     double getHours();
     void printCheck();             // Redefiniton not overloading
-    void giveRaise(double amount); // Redefinition not overloading
+    void giveRaise(double amount); // Redefinition not overloading (Step2)
 
 private:
     double wageRate;
@@ -144,9 +145,9 @@ private:
 // Empty Constructor
 HourlyEmployee::HourlyEmployee() : Employee() // Calling base constructor is only valid here
 {
-    cout << "Enter HourlyEmployee wage rate :" << endl;
+    cout << "Enter HourlyEmployee wage rate :";
     cin >> wageRate;
-    cout << "Enter HourlyEmployee hours workd :" << endl;
+    cout << "Enter HourlyEmployee hours worked :";
     cin >> hours;
 }
 // Constructor with wage and hour information
@@ -257,17 +258,18 @@ void SalariedEmployee::giveRaise(double amount)
 
 int main()
 {
+
     HourlyEmployee Berkay("Berkay Gürkan", "12-433-211", 100, 50);
     cout << "Before raise" << endl;
     Berkay.printCheck();
-    Berkay.giveRaise(10);
+    // Berkay.giveRaise(10);                            // Step (2)
     cout << "After raise" << endl;
     Berkay.printCheck();
 
     SalariedEmployee Mert;
     cout << "Before raise" << endl;
     Mert.printCheck();
-    Mert.giveRaise(6);
+    Mert.giveRaise(6); // Step (2)
     cout << "After raise" << endl;
     Mert.printCheck();
 

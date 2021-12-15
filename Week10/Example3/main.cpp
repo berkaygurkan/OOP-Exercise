@@ -1,6 +1,6 @@
 /* Functions that are not inherited */
 
-/*In general, these three types of functions are NOT inherited:
+/*In general, these functions are NOT inherited:
 1) constructors (including copy constructors)
 2) private members (variables and functions)
 3) destructors
@@ -14,12 +14,11 @@
 
 /*
 Lets create an dynamic array by using class sturucture
-1) Create constructor
-2) Create destructor
-3) Create copy constructor
-4) Create = assignment opeartor overloading
-
-Create and fill first array, use first array to create new arrays by using copy constructor and assignment
+1) Class should create dynamic array by using pointer
+2) Create a initialization mechanism for array.
+3) Don't allow overloading for array.
+4) Create constructor, destructor, copy constructor and assignment operator to test.
+Create and fill first array, use first array to create new arrays by using copy constructor and assignment.
 */
 
 #include <iostream>
