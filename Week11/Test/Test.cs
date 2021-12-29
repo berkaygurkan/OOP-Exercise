@@ -37,6 +37,7 @@ namespace Test
         private void textBox1_MouseDown(object sender, MouseEventArgs e)
         {
             //textBox1.Text = "MouseDown";
+            
         }
 
         private void textBox1_MouseUp(object sender, MouseEventArgs e)
@@ -46,7 +47,8 @@ namespace Test
 
         private void textBox1_MouseHover(object sender, EventArgs e)
         {
-           // textBox1.Text = "Hover";
+            // textBox1.Text = "Hover";
+            textBox1.Hide();
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -58,6 +60,8 @@ namespace Test
 
         private void checkBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
+            textBox1.Show();
+
             textBox1.Text = Convert.ToString(e.KeyChar);
         }
     }
