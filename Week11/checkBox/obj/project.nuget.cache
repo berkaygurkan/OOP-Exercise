@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KqTh5SECXpqvaaDHc1L6JH/AEag5E4t9zCD926p0sh0umbpEk0s7hcrssYMSSE/RrQtp4wgsidOTRIlEhGJPkw==",
+  "dgSpecHash": "0Ybtfcd36DLd1bILBmPqGTx2VO4I4oJwfkAM5tslpWmd/btwlb9HhjFnKXIU8Ta97DaBOHT64rECOlzxDusj5Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\berka\\Desktop\\CS\\checkBox\\checkBox.csproj",
+  "projectFilePath": "D:\\Github\\OOP-Exercise\\Week11\\checkBox\\checkBox.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
