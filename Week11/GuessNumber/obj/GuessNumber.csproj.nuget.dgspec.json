@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\berka\\source\\repos\\GuessNumber\\GuessNumber.csproj": {}
+    "D:\\Github\\OOP-Exercise\\Week11\\GuessNumber\\GuessNumber.csproj": {}
   },
   "projects": {
-    "C:\\Users\\berka\\source\\repos\\GuessNumber\\GuessNumber.csproj": {
+    "D:\\Github\\OOP-Exercise\\Week11\\GuessNumber\\GuessNumber.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\berka\\source\\repos\\GuessNumber\\GuessNumber.csproj",
+        "projectUniqueName": "D:\\Github\\OOP-Exercise\\Week11\\GuessNumber\\GuessNumber.csproj",
         "projectName": "GuessNumber",
-        "projectPath": "C:\\Users\\berka\\source\\repos\\GuessNumber\\GuessNumber.csproj",
+        "projectPath": "D:\\Github\\OOP-Exercise\\Week11\\GuessNumber\\GuessNumber.csproj",
         "packagesPath": "C:\\Users\\berka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\berka\\source\\repos\\GuessNumber\\obj\\",
+        "outputPath": "D:\\Github\\OOP-Exercise\\Week11\\GuessNumber\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

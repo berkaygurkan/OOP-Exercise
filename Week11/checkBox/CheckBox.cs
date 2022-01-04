@@ -20,7 +20,7 @@ namespace checkBox
         private void checkBoxBold_CheckedChanged(object sender, EventArgs e)
         {
             labelMainText.Font = new Font(labelMainText.Font.Name, labelMainText.Font.Size,
-                labelMainText.Font.Style ^ FontStyle.Bold);
+                labelMainText.Font.Style ^ FontStyle.Bold); // XOR
         }
 
         private void checkBoxItalic_CheckedChanged(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace checkBox
 
         private void checkBoxUnderline_CheckedChanged(object sender, EventArgs e)
         {
-            labelMainText.Font = new Font(labelMainText.Font.Name, labelMainText.Font.Size,
+            labelMainText.Font = new Font(labelMainText.Font.Name, labelMainText.Font.Size+1,
                labelMainText.Font.Style ^ FontStyle.Underline);
         }
 

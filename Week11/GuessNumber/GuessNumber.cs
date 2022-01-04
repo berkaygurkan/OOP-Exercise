@@ -73,6 +73,7 @@ namespace GuessNumber
 
                 }
                 firstGuess = false;
+              
 
                 int trueOrFalse = CheckGuess(userGuess);
 
@@ -86,15 +87,13 @@ namespace GuessNumber
                 }
                 else if (trueOrFalse == -1)
                 {
-                    labelInfo.Text = "Too Low!";
-                    BackColor = Color.Red;
+                    labelInfo.Text = "Too Low!" + lastGuess.ToString();
                 }
                 else
                 {
-                    labelInfo.Text = "Too High!";
-                    BackColor = Color.LightBlue;
+                    labelInfo.Text = "Too High!" + lastGuess.ToString();
                 }
-
+                lastGuess = userGuess;
             }
         }
     }
