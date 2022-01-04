@@ -1,0 +1,10 @@
+C:\Users\berka\source\repos\Test\bin\Debug\Test.exe.config
+C:\Users\berka\source\repos\Test\bin\Debug\Test.exe
+C:\Users\berka\source\repos\Test\bin\Debug\Test.pdb
+C:\Users\berka\source\repos\Test\obj\Debug\Test.csproj.AssemblyReference.cache
+C:\Users\berka\source\repos\Test\obj\Debug\Test.Form1.resources
+C:\Users\berka\source\repos\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\berka\source\repos\Test\obj\Debug\Test.csproj.GenerateResource.cache
+C:\Users\berka\source\repos\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\berka\source\repos\Test\obj\Debug\Test.exe
+C:\Users\berka\source\repos\Test\obj\Debug\Test.pdb
