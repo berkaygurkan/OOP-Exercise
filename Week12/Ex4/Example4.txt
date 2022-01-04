@@ -1,0 +1,6 @@
+MDI Text Editor
+- Create an MDI text editor. Each child wondows should contain a multiline RichTextBox.
+- The MDI parant should have a Format Menu with submenus to control size,font and color of the text int active child window.
+- Each submenu should have at least tree options.
+- Parent should have a File Menu, with menu items New Close and Exit.
+- It should have a windows menu to display a list of the open child windows and their layout options.

@@ -1,0 +1,4 @@
+Adding and removing in comboxes
+- Write an app that displays home decoration products in ComboBox. [Curtains, Bedsheets, Pillows, Mattresses, Bathroom Line]
+- A textbox and button are used to add items to the ComboBox.
+- Selectedf item in the combobox will be removed.

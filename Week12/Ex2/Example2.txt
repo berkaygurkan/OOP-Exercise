@@ -1,0 +1,5 @@
+Adding items in ListBox from ComboBox
+- Modify solution on the previous example by adding ListBox to it.
+- When user selects an item from ComboBox  remove the item from ComboBox and add it to Listbox.
+- Program should check at least one item left on box.
+- If it does not warn user.

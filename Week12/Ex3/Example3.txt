@@ -1,0 +1,8 @@
+Tab Pages.
+
+Create an app that contains three TabPages.
+On first TabPage, place a CheckedListBox with six items.
+On second TabPage, place six Textboxes.
+On the last TabPage, place six LinkLabels.
+- The users selection on the firs TabPage should specify whic of the six LinkLabels will be displayed.
+- Use second tab page to modify the web page that is opened by LinkLabels.
