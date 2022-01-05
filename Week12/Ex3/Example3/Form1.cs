@@ -100,7 +100,8 @@ namespace Example3
 
         private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //System.Diagnostics.Process.Start("http://www.google.com");
+            System.Diagnostics.Process.Start(@"http://www.mkt.yildiz.edu.tr");
+           // System.Diagnostics.Process.Start(@"C:\");
             //Process.Start("http://www.google.com/");
         }
 

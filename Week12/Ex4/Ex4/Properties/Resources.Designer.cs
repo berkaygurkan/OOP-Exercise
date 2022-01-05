@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace Example1.Properties
+namespace Ex4.Properties
 {
     /// <summary>
     ///   Yerelleştirilmiş dizeleri vs. aramak için türü kesin belirlenmiş bir kaynak sınıfı.
@@ -43,7 +43,7 @@ namespace Example1.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Example1.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ex4.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

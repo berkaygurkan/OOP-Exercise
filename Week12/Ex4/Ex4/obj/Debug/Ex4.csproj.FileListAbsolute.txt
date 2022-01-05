@@ -1,0 +1,11 @@
+D:\Github\OOP-Exercise\Week12\Ex4\Ex4\bin\Debug\Ex4.exe.config
+D:\Github\OOP-Exercise\Week12\Ex4\Ex4\bin\Debug\Ex4.exe
+D:\Github\OOP-Exercise\Week12\Ex4\Ex4\bin\Debug\Ex4.pdb
+D:\Github\OOP-Exercise\Week12\Ex4\Ex4\obj\Debug\Ex4.csproj.AssemblyReference.cache
+D:\Github\OOP-Exercise\Week12\Ex4\Ex4\obj\Debug\Ex4.Child.resources
+D:\Github\OOP-Exercise\Week12\Ex4\Ex4\obj\Debug\Ex4.ParentForm.resources
+D:\Github\OOP-Exercise\Week12\Ex4\Ex4\obj\Debug\Ex4.Properties.Resources.resources
+D:\Github\OOP-Exercise\Week12\Ex4\Ex4\obj\Debug\Ex4.csproj.GenerateResource.cache
+D:\Github\OOP-Exercise\Week12\Ex4\Ex4\obj\Debug\Ex4.csproj.CoreCompileInputs.cache
+D:\Github\OOP-Exercise\Week12\Ex4\Ex4\obj\Debug\Ex4.exe
+D:\Github\OOP-Exercise\Week12\Ex4\Ex4\obj\Debug\Ex4.pdb
